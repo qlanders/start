@@ -1,0 +1,150 @@
+=va
+  font-size : 0
+  &:before
+    content: ''
+    display : inline-block
+    vertical-align : middle
+    width : 0
+    height : 100%
+
+=br($var)
+  +border-radius($var)
+
+=counter($var)
+  counter-reset: $var
+  & > li:before
+    content: counter($var)
+    counter-increment: $var
+
+=justyfy
+  text-align: justify
+  line-height: 0
+  font-size: 0
+  -ms-text-justify: newspaper
+  text-justify: newspaper
+  zoom: 1
+  -ms-text-align-last: justify
+  text-align-last: justify
+  &:after
+    content: ''
+    display: inline-block
+    width: 100%
+    height: 0
+    visibility: hidden
+    overflow: hidden
+
+=placeholder($color)
+  &:-moz-placeholder,
+  &::-moz-placeholder
+    color: $color
+    opacity: 1
+  &-webkit-input-placeholder
+    color: $color
+
+=text-overflow
+  overflow: hidden
+  -ms-text-overflow: ellipsis
+  text-overflow: ellipsis
+  white-space: nowrap
+
+=arr ($width, $height, $bg, $direction)
+  width: 0
+  height: 0
+  border-style: solid
+  @if $direction == t
+    border-width: 0 $width / 2 + px $height + px $width / 2 + px
+    border-color: transparent transparent $bg transparent
+  @if $direction == r
+    border-width: $height / 2 + px 0 $height / 2 + px $width + px
+    border-color: transparent transparent transparent $bg
+  @if $direction == b
+    border-width: $height + px $width / 2 + px 0 $width / 2 + px
+    border-color: $bg transparent transparent transparent
+  @if $direction == l
+    border-width: $height / 2 + px $width + px $height / 2 + px 0
+    border-color: transparent $bg transparent transparent
+  @if $direction == tl
+    border-width: $height + px $width + px 0 0
+    border-color: $bg transparent transparent transparent
+  @if $direction == tr
+    border-width: 0 $width + px $height + px 0
+    border-color: transparent $bg transparent transparent
+  @if $direction == br
+    border-width: 0 0 $height + px $width + px
+    border-color: transparent transparent $bg transparent
+  @if $direction == bl
+    border-width: $height + px 0 0 $width + px
+    border-color: transparent transparent transparent $bg
+
+=calc($property, $expression)
+  #{$property}: -moz-calc(#{$expression})
+  #{$property}: -webkit-calc(#{$expression})
+  #{$property}: calc(#{$expression})
+
+=appearance($val: none) 
+  -webkit-appearance: $val
+  -moz-appearance: $val
+  appearance: $val
+
+=push-auto
+  margin
+    left: auto
+    right: auto
+
+=pseudo($width: 30px, $height: 30px, $display: block, $pos: absolute, $content: '')
+  content: $content
+  display: $display
+  position: $pos
+  width: $width
+  height: $height
+
+=responcive-ratio($x, $y, $pseudo: false)
+  $padding: unquote(($y / $x) * 100 + "%")
+  @if $pseudo
+    &:before
+      +pseudo($pos: relative)
+      width: 100%
+      padding-top: $padding
+  @else
+    padding-top: $padding
+
+=font-source($size: false, $color: false, $weight: false, $lh: false)
+  font-family: 'Roboto', Helvetica, Arial, sans-serif
+  @if $size
+    font-size: $size
+  @if $color
+    color: $color
+  @if $weight
+    font-weight: $weight
+  @if $lh
+    line-height: $lh
+
+@function z($name)
+  @if index($z-indexes, $name)
+    @return (length($z-indexes) - index($z-indexes, $name)) + 1
+  @else
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}'
+    @return null
+
+$z-indexes: ('header', 'next')
+
+$breakpoints: ("phone": 400px, "phone-wide": 480px, "phablet": 560px, "tablet-small": 640px, "tablet": 768px, "tablet-wide": 1024px, "desktop": 1248px, "desktop-wide": 1440px)
+
+=mq($width, $type: min)
+  @if map_has_key($breakpoints, $width)
+    $width: map_get($breakpoints, $width)
+    @if $type == max
+      $width: $width - 1px
+    @media only screen and (#{$type}-width: $width)
+      @content
+
+=hardware($backface: true, $perspective: 1000)
+  @if $backface
+    backface-visibility: hidden
+  perspective: $perspective
+
+=truncate($truncation-boundary)
+  max-width: $truncation-boundary
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
