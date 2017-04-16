@@ -1,11 +1,11 @@
 {
   "name": "start",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "authors": [
     "GostevD <exalted.aims@gmail.com>"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "",
   "private": true,
   "ignore": [
