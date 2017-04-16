@@ -16,9 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^2.0.0",
     "slick-carousel": "^1.6.0",
     "CSS-Hamburgers": "hamburgers#^1.0.2",
-    // "bootstrap": "^4.0.0"
+    "magnific-popup": "^1.1.0"
   }
 }

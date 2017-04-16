@@ -15,7 +15,7 @@
 	
 	<!-- HEADER -->
 		<header class="header">
-			<div class="g--wrapper">
+			<div class="g--wrapper g--wrapper_padding">
 			
 			</div>
 		</header>
@@ -24,13 +24,11 @@
 	<!-- NAVIGATION -->
 	<section class="navigation">
 		<div class="g--wrapper">
-			<button class="hamburger hamburger--collapse is-active" type="button">
-	  		<span class="hamburger-box">
-	 			 <span class="hamburger-inner"></span>
-				 </span>
-				 <span class="hamburger-label">Меню</span>
-			</button>
-			<nav>
+			<nav id="navigation">
+				<button class="m-hamburger mm-hamburger--l-rotating-arrow"
+			    aria-label="Menu" aria-controls="navigation">
+			    <span>Menu</span>
+				</button> 
 				<ul class="navigation__list">
 				
 				</ul>
@@ -58,9 +56,16 @@
 	</div>
 </footer>
 <!-- FOOTER END -->
-
-<script src="libs/jquery/dist/jquery.min.map"></script>
-<script src="js/lib/all.js"></script>
+<!-- build:remove -->
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous">
+</script>
+<!-- endbuild -->
+<!-- build:js js/custom.js -->
+<script src="js/lib.js"></script>
 <script src="js/custom.js"></script>
+<!-- endbuild -->
 </body>
 </html>

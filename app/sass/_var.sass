@@ -1,24 +1,52 @@
 //------------------------HAMBURGER
-$hamburger-padding-x: 15px
-$hamburger-padding-y: 15px
-$hamburger-layer-width: 40px
-$hamburger-layer-height: 4px
-$hamburger-layer-spacing: 6px
-$hamburger-layer-color: #000000
-$hamburger-layer-border-radius: 4px
-$hamburger-hover-opacity: 0.7
-$hamburger-hover-transition-duration: 0.15s
-$hamburger-hover-transition-timing-function: linear
+$burger_font_size: 10px
+$burger_size: 6em
+$burger_color: #000
+$buger_color_inverted: #ddd
+$burger_transf_duration: 0.3s
+$burger-module: "hamburger"
 
-// To use CSS filters as the hover effect instead of opacity,
-// set $hamburger-hover-use-filter as true and
-// change the value of $hamburger-hover-filter accordingly.
-$hamburger-hover-use-filter: false
-$hamburger-hover-filter: opacity(50%)
+$burger-module: "vegi-burger"
+//--------------------MAGNIFIC POPUP
+//$mfp-overlay-color:                   #0b0b0b !default                   // Color of overlay screen
+$mfp-overlay-opacity:                 0.8                         // Opacity of overlay screen
+$mfp-shadow:                          0 0 8px rgba(0, 0, 0, 0.6)  // Shadow on image or iframe
 
-// Types (Remove or comment out what you don’t need)
-$hamburger-types: 3 dx
-//3dx, 3dx-r, 3dy, 3dy-r, arrow, arrow-r, arrowalt, arrowalt-r, boring, collapse, collapse-r, elastic, elastic-r, emphatic, emphatic-r, slider, slider-r, spring, spring-r, stand, stand-r, spin, spin-r, squeeze, vortex, vortex-r
+// spacing
+$mfp-popup-padding-left:              8px                         // Padding from left and from right side
+$mfp-popup-padding-left-mobile:       6px                         // Same as above, but is applied when width of window is less than 800px
+
+$mfp-z-index-base:                    1040                  // Base z-index of popup
+
+// controls
+$mfp-include-arrows:                  true                        // Include styles for nav arrows
+$mfp-controls-opacity:                0.65                        // Opacity of controls
+$mfp-controls-color:                  #FFF                         // Color of controls
+$mfp-controls-border-color:           #3F3F3F  	                 // Border color of controls
+$mfp-inner-close-icon-color:          #333                        // Color of close button when inside
+$mfp-controls-text-color:             #CCC                       // Color of preloader and "1 of X" indicator
+$mfp-controls-text-color-hover:       #FFF                       // Hover color of preloader and "1 of X" indicator
+
+// Iframe-type options
+$mfp-include-iframe-type:             true                       // Enable Iframe-type popups
+$mfp-iframe-padding-top:              40px                       // Iframe padding top
+$mfp-iframe-background:               #000                       // Background color of iframes
+$mfp-iframe-max-width:                900px                      // Maximum width of iframes
+$mfp-iframe-ratio:                    9/16                       // Ratio of iframe (9/16 = widescreen, 3/4 = standard, etc.)
+
+// Image-type options
+$mfp-include-image-type:              true                       // Enable Image-type popups
+$mfp-image-background:                #444
+$mfp-image-padding-top:               40px                       // Image padding top
+$mfp-image-padding-bottom:            40px                       // Image padding bottom
+$mfp-include-mobile-layout-for-image: true                       // Removes paddings from top and bottom
+
+// Image caption options
+$mfp-caption-title-color:             #F3F3F3                    // Caption title color
+$mfp-caption-subtitle-color:          #BDBDBD                    // Caption subtitle color
+
+// A11y
+$mfp-use-visuallyhidden:              false                      // Hide content from browsers, but make it available for screen readers
 
 //-------------------------------PATH
 
@@ -34,3 +62,9 @@ $color-main: #717ad4
 $color-accent: #000088
 $color-borders: #cccccc
 $color-footer-bg: #999
+
+//------------------------
+
+$z-indexes: ('header', 'next')
+
+$breakpoints: ("xs": 320px, "sm": 560px, "md": 768px, "lg": 1024px, "xl": 1440px)

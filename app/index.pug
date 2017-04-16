@@ -1,0 +1,42 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+    meta(name='format-detection', content='telephone=no')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel='stylesheet', href='css/style.css')
+    meta(name='theme-color', content='#154a7e')
+    title Document
+  body
+    #root.root-container
+      //HEADER
+      header.header
+        .g--wrapper.g--wrapper_padding
+      //HEADER END
+      //NAVIGATION
+      section.navigation
+        .g--wrapper
+          nav#navigation
+            button.m-hamburger.mm-hamburger--l-rotating-arrow(aria-label='Menu', aria-controls='navigation')
+              span Menu
+            ul.navigation__list
+              li.navigation__item
+      //NAVIGATION END
+      //CONTENT
+      main.content
+        .g--wrapper
+      //CONTENT END
+      #root_footer
+    //FOOTER
+    footer#footer.footer
+      .g--wrapper
+        p Footer content
+    //FOOTER END
+    // build:remove
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js', integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=', crossorigin='anonymous')
+    // endbuild
+    // build:js js/custom.js
+    script(src='js/lib.js')
+    script(src='js/custom.js')
+    // endbuild
