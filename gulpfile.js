@@ -13,6 +13,7 @@ var gulp        = require('gulp'),
 		useref      = require('gulp-useref'),
 		gulpif      = require('gulp-if'),
 		uglifyJs    = require('gulp-uglifyjs'),
+		svgSprite   = require('gulp-svg-sprite'),
 		compass     = require('gulp-compass');
 
 
@@ -65,6 +66,24 @@ gulp.task('img', function () {
 			une        : [pngquant()]
 		})))
 		.pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('svgSprite', function () {
+	return gulp.src('app/images/svg/*.svg')
+	.pipe(svgSprite({
+		mode: {
+			symbol: {
+				dest: '',
+				sprite: 'sprite',
+				render: {
+					scss: {
+						dest: '../sass/_sprite.scss'
+					}
+				}
+			}
+		}
+	}))
+	.pipe(gulp.dest('app/images/'));
 });
 
 gulp.task('clean', function () {
