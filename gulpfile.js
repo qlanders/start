@@ -58,7 +58,7 @@ gulp.task('compass', function () {
 });
 
 gulp.task('img', function () {
-	return gulp.src('app/images/**/*')
+	return gulp.src(['app/images/**/*', '!app/images/svg/*', '!app/images/sprite.svg'])
 		.pipe(cache(imgMin({
 			intarlaced : true,
 			progressive: true,
@@ -83,6 +83,12 @@ gulp.task('svgSprite', function () {
 			}
 		}
 	}))
+	.on('error', notify.onError(
+		{
+			message: "<%= error.message %>",
+			title  : "SVG error!"
+		}
+	))
 	.pipe(gulp.dest('app/images/'));
 });
 
@@ -90,14 +96,14 @@ gulp.task('clean', function () {
 	return del.sync('dist');
 });
 
-gulp.task('watch', ['sync', 'compass', 'pug'], function () {
+gulp.task('watch', ['sync', 'compass', 'pug', 'svgSprite'], function () {
 	gulp.watch('app/sass/**/*.sass', ['compass']);
 	gulp.watch('app/*.pug', reload);
 	gulp.watch('app/*.html', reload);
 	gulp.watch('app/**/*.js', reload);
 });
 
-gulp.task('build', ['compass', 'pug', 'img', 'clean'], function () {
+gulp.task('build', ['clean', 'compass', 'pug', 'svgSprite', 'img'], function () {
 
 	gulp.src('app/css/*.css')
 		.pipe(gcmq())
@@ -119,9 +125,12 @@ gulp.task('build', ['compass', 'pug', 'img', 'clean'], function () {
 		.pipe(gulpif('*.js', uglifyJs()))
 		.pipe(gulp.dest('dist'));
 
+	gulp.src('app/images/sprite.svg')
+		.pipe(gulp.dest('dist/images'));
+
 });
 
-gulp.task('buildCss', ['compass', 'clean'], function () {
+gulp.task('buildCss', ['clean', 'compass'], function () {
 	gulp.src('app/css/*.css')
 		.pipe(gcmq())
 		.pipe(uncss({
