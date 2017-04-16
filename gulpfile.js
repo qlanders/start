@@ -1,19 +1,19 @@
 var gulp        = require('gulp'),
-    browserSync = require('browser-sync'),
-    reload      = browserSync.reload,
-    del         = require('del'),
-    pug 				= require('gulp-pug'),
-    cache       = require('gulp-cache'),
-    uncss       = require('gulp-uncss'),
-    notify      = require('gulp-notify'),
-    imgMin      = require('gulp-imagemin'),
-    pngquant    = require('imagemin-pngquant'),
-    gcmq				=	require('gulp-group-css-media-queries'),
-    csso				= require('gulp-csso'),
-    useref 			= require('gulp-useref'),
-    gulpif      = require('gulp-if'),
-    uglifyJs		= require('gulp-uglifyjs'),
-    compass     = require('gulp-compass');
+		browserSync = require('browser-sync'),
+		reload      = browserSync.reload,
+		del         = require('del'),
+		pug         = require('gulp-pug'),
+		cache       = require('gulp-cache'),
+		uncss       = require('gulp-uncss'),
+		notify      = require('gulp-notify'),
+		imgMin      = require('gulp-imagemin'),
+		pngquant    = require('imagemin-pngquant'),
+		gcmq        = require('gulp-group-css-media-queries'),
+		csso        = require('gulp-csso'),
+		useref      = require('gulp-useref'),
+		gulpif      = require('gulp-if'),
+		uglifyJs    = require('gulp-uglifyjs'),
+		compass     = require('gulp-compass');
 
 
 gulp.task('sync', function () {
@@ -26,11 +26,11 @@ gulp.task('sync', function () {
 });
 
 gulp.task('pug', function () {
-  return gulp.src('app/*.pug')
-  .pipe(pug({
-    pretty: true
-  }))
-  .on('error', notify.onError(
+	return gulp.src('app/*.pug')
+	.pipe(pug({
+		pretty: true
+	}))
+	.on('error', notify.onError(
 		{
 			message: "<%= error.message %>",
 			title  : "Pug error!"
@@ -87,8 +87,8 @@ gulp.task('build', ['compass', 'pug', 'img', 'clean'], function () {
 		}))
 		.pipe(csso({
 			restructure: false,
-      sourceMap: false,
-      debug: true
+			sourceMap: false,
+			debug: true
 		}))
 		.pipe(gulp.dest('dist/css'));
 
@@ -110,8 +110,8 @@ gulp.task('buildCss', ['compass', 'clean'], function () {
 		}))
 		.pipe(csso({
 			restructure: false,
-      sourceMap: false,
-      debug: true
+			sourceMap: false,
+			debug: true
 		}))
 		.pipe(gulp.dest('dist/css'));
 });
