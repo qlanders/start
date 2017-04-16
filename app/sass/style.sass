@@ -52,12 +52,6 @@ b, strong
 .g--wrapper
   max-width: 1200px
   margin: 0 auto
-  &_padding
-    padding-left: 10px
-    padding-right: 10px
-    +mq('md')
-      padding-left: 12px
-      padding-right: 12px
 
 .g--h1,
 .g--h2,
@@ -192,3 +186,13 @@ b, strong
     background-color: #EC2B26
     border: 1px solid #EC2B26
 
+//--------------------------------
+//
+
+.test
+  margin: 0 auto
+  +mq('sm')
+    display: none
+  +mq('md')
+    display: block
+    margin: 5px auto

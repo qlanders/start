@@ -10,7 +10,6 @@
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.6",
     "gulp-compass": "^2.1.0",
-    "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.0",
     "gulp-group-css-media-queries": "^1.2.0",
     "gulp-if": "^2.0.2",
