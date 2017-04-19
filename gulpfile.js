@@ -4,7 +4,6 @@ var gulp        = require('gulp'),
 		del         = require('del'),
 		pug         = require('gulp-pug'),
 		cache       = require('gulp-cache'),
-		uncss       = require('gulp-uncss'),
 		notify      = require('gulp-notify'),
 		imgMin      = require('gulp-imagemin'),
 		pngquant    = require('imagemin-pngquant'),
@@ -107,9 +106,6 @@ gulp.task('build', ['clean', 'compass', 'pug', 'svgSprite', 'img'], function () 
 
 	gulp.src('app/css/*.css')
 		.pipe(gcmq())
-		.pipe(uncss({
-			html: ['app/index.html']
-		}))
 		.pipe(csso({
 			restructure: false,
 			sourceMap: false,
@@ -133,9 +129,6 @@ gulp.task('build', ['clean', 'compass', 'pug', 'svgSprite', 'img'], function () 
 gulp.task('buildCss', ['clean', 'compass'], function () {
 	gulp.src('app/css/*.css')
 		.pipe(gcmq())
-		.pipe(uncss({
-			html: ['app/index.html']
-		}))
 		.pipe(csso({
 			restructure: false,
 			sourceMap: false,
