@@ -6,7 +6,7 @@ mixin list(name, count, src)
 		- var i = 1
 		while i <= count
 			li(class=name + '__item')
-				div(class=name + 'item-inner')
+				div(class=name + '__item-inner')
 					img(class=name + '__img', src=src + i + '.jpg')
 					if block
 						block
