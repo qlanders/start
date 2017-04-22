@@ -97,14 +97,14 @@ gulp.task('clean', function () {
 
 gulp.task('watch', ['sync', 'compass', 'pug', 'svgSprite'], function () {
 	gulp.watch('app/sass/**/*.sass', ['compass']);
-	gulp.watch('app/*.pug', reload);
+	gulp.watch('app/**/*.pug', ['pug']);
 	gulp.watch('app/*.html', reload);
 	gulp.watch('app/**/*.js', reload);
 });
 
 gulp.task('build', ['clean', 'compass', 'pug', 'svgSprite', 'img'], function () {
 
-	gulp.src('app/css/*.css')
+	gulp.src('app/css/**/*.css')
 		.pipe(gcmq())
 		.pipe(csso({
 			restructure: false,

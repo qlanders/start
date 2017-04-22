@@ -1,0 +1,15 @@
+mixin link(href, name)
+	a(href=href)&attributes(attributes)= name
+
+mixin list(name, count, src)
+	ul(class=name + '__list')
+		- var i = 1
+		while i <= count
+			li(class=name + '__item')
+				div(class=name + 'item-inner')
+					img(class=name + '__img', src=src + i + '.jpg')
+					if block
+						block
+					else
+					- i++
+

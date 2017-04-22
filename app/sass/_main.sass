@@ -1,0 +1,63 @@
+@import variables
+
+html, body
+  font-family: 'Roboto', Tahoma, sans-serif
+  font-size: 14px
+  font-weight: 400
+  background-color: #FFF
+  color: $color-font
+  height: 100%
+  width: 100%
+  min-width: 320px
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+*,
+*::before,
+*::after
+  +box-sizing(border-box)
+  outline: none
+
+a
+  +link-colors($color-links, $color-links, $color-links, $color-links, $color-links)
+  &:hover
+    text-decoration: none
+
+p
+  line-height: 1.3
+  margin-bottom: 1em
+
+b, strong
+  font-weight: bold
+
+.g--wrapper
+  max-width: 1200px
+  margin: 0 auto
+
+.g--h1,
+.g--h2,
+.g--h3,
+.g--h4,
+.g--h5,
+.g--h6
+  line-height: 1
+  font-weight: 500
+
+.g--h1
+  font-size: 32px
+.g--h2
+  font-size: 26px
+.g--h3
+  font-size: 22px
+.g--h4
+  font-size: 18px
+.g--h5
+  font-size: 16px
+.g--h6
+  font-size: 14px
+
++sticky-footer(100px)
+
+footer
+  background: $color-footer-bg
+  

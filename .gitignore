@@ -80,4 +80,6 @@ node_modules/
 dist/
 app/css/
 app/libs/
+app/**/*.html
 .sass-cache/
+
