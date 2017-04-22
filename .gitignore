@@ -82,4 +82,5 @@ app/css/
 app/libs/
 app/**/*.html
 .sass-cache/
+app/test.pug
 
