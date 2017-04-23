@@ -2,7 +2,7 @@ mixin link(href, name)
 	a(href=href)&attributes(attributes)= name
 
 mixin list(name, count, src)
-	ul(class=name + '__list')
+	ul(class=name + '__list')&attributes(attributes)
 		- var i = 1
 		while i <= count
 			li(class=name + '__item')
@@ -11,5 +11,18 @@ mixin list(name, count, src)
 					if block
 						block
 					else
+						return
 					- i++
+
+mixin section(name)
+	section(class=name)&attributes(attributes)
+		div(class='g--wrapper ' + 'g--wrapper_p' + name + '__wrapper')
+			if block
+				block
+			else
+				return
+
+mixin svg(name)
+	svg(class='svg-' + name + '-dims')
+		use(xlink:href='#' + name, class='use-' + name)
 

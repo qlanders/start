@@ -19,7 +19,7 @@ html, body
   outline: none
 
 a
-  +link-colors($color-links, $color-links, $color-links, $color-links, $color-links)
+  +link-colors($color-links, $color-links-hover, $color-links-hover, $color-links, $color-links)
   &:hover
     text-decoration: none
 
@@ -33,6 +33,10 @@ b, strong
 .g--wrapper
   max-width: 1200px
   margin: 0 auto
+
+.g--wrapper_p
+  padding-left: 25px
+  padding-right: 25px
 
 .g--h1,
 .g--h2,
