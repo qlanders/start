@@ -90,12 +90,10 @@
     left: auto
     right: auto
 
-=pseudo($width: 30px, $height: 30px, $display: block, $pos: absolute, $content: '')
+=pseudo($display: block, $pos: absolute, $content: '')
   content: $content
   display: $display
   position: $pos
-  width: $width
-  height: $height
 
 =responcive-ratio($x, $y, $pseudo: false)
   $padding: unquote(($y / $x) * 100 + "%")
