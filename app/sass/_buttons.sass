@@ -2,21 +2,23 @@
 /*-------------------------BUTTONS-------------------------------*/
 .g--btn
   display: inline-block
+  vertical-align: middle
+  font-family: $font-family
   +link-colors($color-buttons-font, $color-buttons-font, $color-buttons-font, $color-buttons-font, $color-buttons-font)
   text-decoration: none
-  font-size: 1rem
-  font-weight: bold
+  font-size: 16px
+  font-weight: 500
   line-height: 25px
   padding: 0 15px
   border: 0
-  vertical-align: middle
   white-space: nowrap
   min-width: 200px
   background-color: $color-main
   text-align: center
   cursor: pointer
+  +appearence(none)
   +br(1px)
-  +transition(all .25s ease)
+  +transition($transition)
   &:hover
     background-color: $color-accent
   &:active
