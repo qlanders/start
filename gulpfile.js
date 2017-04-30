@@ -98,7 +98,7 @@ gulp.task('clean', function () {
 gulp.task('watch', ['sync', 'compass', 'pug', 'svgSprite'], function () {
 	gulp.watch('app/sass/**/*.sass', ['compass']);
 	gulp.watch('app/**/*.pug', ['pug']);
-	gulp.watch('app/*.html', reload);
+	gulp.watch('app/index.html', reload);
 	gulp.watch('app/**/*.js', reload);
 });
 

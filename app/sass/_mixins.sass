@@ -33,14 +33,6 @@
     visibility: hidden
     overflow: hidden
 
-=placeholder($color)
-  &:-moz-placeholder,
-  &::-moz-placeholder
-    color: $color
-    opacity: 1
-  &-webkit-input-placeholder
-    color: $color
-
 =text-overflow
   overflow: hidden
   -ms-text-overflow: ellipsis
@@ -90,12 +82,10 @@
     left: auto
     right: auto
 
-=pseudo($width: 30px, $height: 30px, $display: block, $pos: absolute, $content: '')
+=pseudo($display: block, $pos: absolute, $content: '')
   content: $content
   display: $display
   position: $pos
-  width: $width
-  height: $height
 
 =responcive-ratio($x, $y, $pseudo: false)
   $padding: unquote(($y / $x) * 100 + "%")
@@ -125,14 +115,6 @@
     @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}'
     @return null
 
-=mq($width, $type: min)
-  @if map_has_key($breakpoints, $width)
-    $width: map_get($breakpoints, $width)
-    @if $type == max
-      $width: $width - 1px
-    @media only screen and (#{$type}-width: $width)
-      @content
-
 =hardware($backface: true, $perspective: 1000)
   @if $backface
     backface-visibility: hidden
@@ -143,3 +125,9 @@
   white-space: nowrap
   overflow: hidden
   text-overflow: ellipsis
+  
+=replace()
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+  
