@@ -18,6 +18,7 @@ var gulp = require('gulp'),
 		path           = require('path'),
     compass = require('gulp-compass');
 
+//---------------------------------------SYNC
 
 gulp.task('sync', function() {
     browserSync.init({
@@ -27,6 +28,8 @@ gulp.task('sync', function() {
         notify: false
     });
 });
+
+//---------------------------------------PUG
 
 gulp.task('pug', function() {
     return gulp.src('app/*.pug')
@@ -40,17 +43,19 @@ gulp.task('pug', function() {
         .pipe(gulp.dest('app/'));
 });
 
+//---------------------------------------CSS
+
 gulp.task('compass', function() {
     gulp.src('app/sass/**/*.sass')
         .pipe(compass({
-						project: path.join(__dirname, 'app'),
+			project: path.join(__dirname, 'app'),
+            http_path: '/local',
             comments: false,
             css: 'css',
             image: 'images',
             javascript: 'js',
             sass: 'sass',
-            relative: false,
-            logging: false
+            relative: true  // change to false before build
         }))
         .on('error', notify.onError({
             message: "<%= error.message %>",
@@ -59,6 +64,8 @@ gulp.task('compass', function() {
         .pipe(gulp.dest('css'))
         .pipe(reload({ stream: true }));
 });
+
+//---------------------------------------IMAGES
 
 gulp.task('img', function() {
     return gulp.src(['app/images/**/*', '!app/images/svg/*', '!app/images/sprite.svg'])
@@ -93,12 +100,14 @@ gulp.task('svgSprite', function() {
         .pipe(gulp.dest('app/images/'));
 });
 
+//---------------------------------------CLEAN
+
 gulp.task('clean', function() {
     return del.sync('dist');
 });
 
 gulp.task('cleanAppCss', function() {
-    return del.sync('dist/css');
+    return del.sync('app/css');
 });
 
 gulp.task('cleanCss', function() {
@@ -111,6 +120,8 @@ gulp.task('watch', ['sync', 'compass', 'pug', 'svgSprite'], function() {
     gulp.watch('app/index.html', reload);
     gulp.watch('app/**/*.js', reload);
 });
+
+//---------------------------------------BUILD
 
 gulp.task('build', ['clean', 'img', 'pug', 'svgSprite', 'compass'], function() {
 

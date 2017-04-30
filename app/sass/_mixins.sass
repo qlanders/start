@@ -33,12 +33,6 @@
     visibility: hidden
     overflow: hidden
 
-=text-overflow
-  overflow: hidden
-  -ms-text-overflow: ellipsis
-  text-overflow: ellipsis
-  white-space: nowrap
-
 =arr ($width, $height, $bg, $direction)
   width: 0
   height: 0
@@ -68,7 +62,9 @@
     border-width: $height 0 0 $width
     border-color: transparent transparent transparent $bg
 
-=calc($property, $expression)
+=calc($property, $expression, $default: false)
+  @if $default
+    #{$property}: $default
   #{$property}: -moz-calc(#{$expression})
   #{$property}: -webkit-calc(#{$expression})
   #{$property}: calc(#{$expression})
