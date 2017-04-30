@@ -1,0 +1,83 @@
+/*-------------------------SLICK-------------------------------*/
+.slick-arrow
+  position: absolute
+  padding: 0
+  background-color: rgba(0, 0, 0, 0.22)
+  +br(50%)
+  height: 43px
+  width: 43px
+  font-size: 0
+  text-indent: -9999px
+  border: 0
+  top: 50%
+  margin-top: -21px
+  outline: none
+  cursor: pointer
+  z-index: 1
+  +transition(all .25s ease)
+  &:hover
+    background-color: rgba(0, 0, 0, 0.45)
+
+.slick-prev
+  left: 15px
+  &:before
+    content: ''
+    position: absolute
+    top: 10px
+    left: 18px
+    background-color: #FFF
+    height: 15px
+    width: 3px
+    +transform(rotate(45deg))
+  &:after
+    content: ''
+    position: absolute
+    top: 19px
+    left: 18px
+    background-color: #FFF
+    height: 15px
+    width: 3px
+    +transform(rotate(-45deg))
+.slick-next
+  right: 15px
+  &:before
+    content: ''
+    position: absolute
+    top: 10px
+    left: 21px
+    background-color: #FFF
+    height: 15px
+    width: 3px
+    +transform(rotate(-45deg))
+  &:after
+    content: ''
+    position: absolute
+    top: 19px
+    left: 21px
+    background-color: #FFF
+    height: 15px
+    width: 3px
+    +transform(rotate(45deg))
+
+.slick-dots
+  width: 100%
+  position: absolute
+  text-align: center
+  bottom: 15px
+  left: 0
+  background: transparent
+  li
+    font-size: 0
+    text-indent: -9999px
+    display: inline-block
+    height: 15px
+    width: 15px
+    +br(50%)
+    border: 1px solid #B5B5B5
+    cursor: pointer
+    margin: 0 3px
+  li.slick-active
+    background-color: #EC2B26
+    border: 1px solid #EC2B26
+
+//--------------------------------
