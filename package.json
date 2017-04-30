@@ -1,8 +1,19 @@
 {
   "name": "start",
-  "version": "1.0.2",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.3",
+  "description": "Start new project",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qlanders/test.git"
+  },
+  "keywords": [
+    "start"
+  ],
+  "bugs": {
+    "url": "https://github.com/qlanders/start/issues"
+  },
+  "homepage": "https://github.com/qlanders/start#readme",
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.18.8",
@@ -25,6 +36,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "MIT"
+  "author": "GostevD",
+  "license": "UNLICENSED"
 }

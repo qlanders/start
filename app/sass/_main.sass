@@ -1,14 +1,15 @@
 @import variables
 
 html, body
-  font-family: $font-family
-  font-size: 14px
-  font-weight: 400
-  background-color: #FFF
-  color: $color-font
   height: 100%
-  width: 100%
+
+body
+  font: $font-size $font-family
+  color: $color-font
   min-width: 320px
+  -ms-text-size-adjust: $text-size-adjust
+  -moz-text-size-adjust: $text-size-adjust
+  -webkit-text-size-adjust: $text-size-adjust
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
@@ -71,3 +72,30 @@ textarea
 input[type=text], input[type=tel], input[type=email]
   font-family: $font-family
   
+.g--btn
+  display: inline-block
+  vertical-align: middle
+  font-family: $font-family
+  +link-colors($color-buttons-font, $color-buttons-font, $color-buttons-font, $color-buttons-font, $color-buttons-font)
+  text-decoration: none
+  font-size: 16px
+  font-weight: 500
+  line-height: 25px
+  padding: 0 15px
+  border: 0
+  white-space: nowrap
+  min-width: 200px
+  background-color: $color-main
+  text-align: center
+  cursor: pointer
+  +appearance(none)
+  +br(1px)
+  +transition($transition)
+  &:hover
+    background-color: $color-accent
+  &:active
+    background-color: lighten($color-accent, 5%)
+  &_sm
+    min-width: 150px
+    line-height: 34px
+    font-size: 1.1rem

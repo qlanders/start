@@ -83,4 +83,4 @@ app/libs/
 app/**/*.html
 .sass-cache/
 app/test.pug
-
+/app/images/boards_of_canada.jpg
