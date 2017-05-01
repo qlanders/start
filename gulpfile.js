@@ -78,7 +78,7 @@ gulp.task('img', function() {
         .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('svgSprite', function() {
+gulp.task('svgSymol', function() {
     return gulp.src('app/images/svg/*.svg')
         .pipe(svgSprite({
             mode: {
@@ -100,6 +100,31 @@ gulp.task('svgSprite', function() {
         .pipe(gulp.dest('app/images/'));
 });
 
+gulp.task('svgCss', function () {
+    return gulp.src('app/images/svg/css/*.svg')
+        .pipe(svgSprite({
+            mode: {
+                css: {
+                    dest  : '',
+                    sprite: '../images/sprite-css',
+                    render: {
+                        scss: {
+                            dest: '../sass/_sprite-css.scss'
+                        }
+                    },
+                    bust  : false
+                }
+            }
+        }))
+        .on('error', notify.onError(
+            {
+                message: "<%= error.message %>",
+                title  : "SVG error!"
+            }
+        ))
+        .pipe(gulp.dest('app/images/'));
+});
+
 //---------------------------------------CLEAN
 
 gulp.task('clean', function() {
@@ -114,7 +139,9 @@ gulp.task('cleanCss', function() {
     return del.sync('dist/css');
 });
 
-gulp.task('watch', ['sync', 'compass', 'pug', 'svgSprite'], function() {
+//---------------------------------------WATCH
+
+gulp.task('watch', ['sync', 'compass', 'pug', 'svgSymbol', 'svgCss'], function() {
     gulp.watch('app/sass/**/*.sass', ['compass']);
     gulp.watch('app/**/*.pug', ['pug']);
     gulp.watch('app/index.html', reload);
@@ -123,7 +150,7 @@ gulp.task('watch', ['sync', 'compass', 'pug', 'svgSprite'], function() {
 
 //---------------------------------------BUILD
 
-gulp.task('build', ['clean', 'img', 'pug', 'svgSprite', 'compass'], function() {
+gulp.task('build', ['clean', 'img', 'pug', 'svgSymbol', 'svgCss', 'compass'], function() {
 
     gulp.src('app/css/**/*.css')
         .pipe(gcmq())
