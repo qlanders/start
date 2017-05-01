@@ -1,3 +1,3 @@
-# Start template
-Start template for new project.
-SASS, Pug, gulp etc.
+# Starting template
+Starting template for new project.
+Use SASS, Pug, gulp etc.

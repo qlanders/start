@@ -5,15 +5,12 @@
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qlanders/test.git"
+    "url": "git+https://qlanders@bitbucket.org/qlanders/start.git"
   },
   "keywords": [
-    "start"
+    "start", "gulp", "pug", "sass", "new project", "compass"
   ],
-  "bugs": {
-    "url": "https://github.com/qlanders/start/issues"
-  },
-  "homepage": "https://github.com/qlanders/start#readme",
+  "homepage": "https://bitbucket.org/qlanders/start",
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.18.8",
