@@ -59,4 +59,4 @@ app/**/*.html
 .sass-cache/
 app/test.pug
 /app/images/boards_of_canada.jpg
-/app/images/sprite-css.svg
+app/images/sprite-css.svg
