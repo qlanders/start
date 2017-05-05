@@ -8,13 +8,19 @@
     "url": "git+https://qlanders@bitbucket.org/qlanders/start.git"
   },
   "keywords": [
-    "start", "gulp", "pug", "sass", "new project", "compass"
+    "start",
+    "gulp",
+    "pug",
+    "sass",
+    "new project",
+    "compass"
   ],
   "homepage": "https://bitbucket.org/qlanders/start",
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "del": "^2.2.2",
+    "eslint": "^3.19.0",
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.6",
     "gulp-compass": "^2.1.0",
