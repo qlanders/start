@@ -1,62 +1,24 @@
 # Created by .ignore support plugin (hsz.mobi)
-### Example user template template
-### Example user template
-
-# IntelliJ project files
-.idea
-*.iml
-out
-gen### Dropbox template
-# Dropbox settings and caches
-.dropbox
-.dropbox.attr
-.dropbox.cache
-
-## File-based project format:
-*.iws
-
-## Plugin-specific files:
-
-# IntelliJ
-/out/
-
-# mpeltonen/sbt-idea plugin
-.idea_modules/
-
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
-### Windows template
-# Windows thumbnail cache files
+.sass-cache/
+*.css.map
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
 Thumbs.db
 ehthumbs.db
 ehthumbs_vista.db
-
-# Folder config file
 Desktop.ini
-
-# Recycle Bin used on file shares
 $RECYCLE.BIN/
-
-# Windows Installer files
 *.cab
 *.msi
 *.msm
 *.msp
-
-# Windows shortcuts
 *.lnk
-node_modules/
-dist/
+app/images/sprite-css.svg
 app/css/
 app/libs/
-app/**/*.html
-.sass-cache/
 app/test.pug
-/app/images/boards_of_canada.jpg
-app/images/sprite-css.svg
+app/**/*.html
+node_modules/
