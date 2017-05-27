@@ -1,4 +1,4 @@
-=va
+=va()
   font-size : 0
   &:before
     content: ''
@@ -10,13 +10,13 @@
 =br($var)
   +border-radius($var)
 
-=counter($var)
+=counter($var, $symb: '')
   counter-reset: $var
   & > li:before
-    content: counter($var)
+    content: counter($var)"#{$symb}"
     counter-increment: $var
 
-=justyfy
+=justyfy()
   text-align: justify
   line-height: 0
   font-size: 0
@@ -33,7 +33,13 @@
     visibility: hidden
     overflow: hidden
 
-=arr ($width, $height, $bg, $direction)
+=text-overflow()
+  overflow: hidden
+  -ms-text-overflow: ellipsis
+  text-overflow: ellipsis
+  white-space: nowrap
+
+=arr($width, $height, $bg, $direction)
   width: 0
   height: 0
   border-style: solid
@@ -69,7 +75,13 @@
   #{$property}: -webkit-calc(#{$expression})
   #{$property}: calc(#{$expression})
 
-=push-auto
+=hide-styling() 
+  -webkit-appearance: none
+  -moz-appearance: none
+  &::-ms-expand
+    display: none
+
+=push-auto()
   margin:
     left: auto
     right: auto
@@ -89,17 +101,6 @@
   @else
     padding-top: $padding
 
-=font-source($size: false, $color: false, $weight: false, $lh: false)
-  font-family: 'Roboto', Helvetica, Arial, sans-serif
-  @if $size
-    font-size: $size
-  @if $color
-    color: $color
-  @if $weight
-    font-weight: $weight
-  @if $lh
-    line-height: $lh
-
 @function z($name)
   @if index($z-indexes, $name)
     @return (length($z-indexes) - index($z-indexes, $name)) + 1
@@ -116,4 +117,26 @@
   text-indent: 100%
   white-space: nowrap
   overflow: hidden
+
+=autofill($background: #FFF, $color: #000)
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill
+    -webkit-text-fill-color: $color
+    -webkit-box-shadow: 0 0 0 1000px $background inset
   
+@function unicode($str)
+  @return unquote("\"")+unquote(str-insert($str, "\\", 1))+unquote("\"")
+
+=centerX($pos: 50%)
+  left: $pos
+  +transform(translateX(-50%)
+=centerY($pos: 50%)
+  top: $pos
+  +transform(translateY(-50%)
+=center($pos: 50%)
+  left: $pos
+  +transform(translateX(-50%)
+  top: $pos
+  +transform(translateY(-50%)
