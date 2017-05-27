@@ -131,12 +131,11 @@
 
 =centerX($pos: 50%)
   left: $pos
-  +transform(translateX(-50%)
+  +transform(translateX(-50%))
 =centerY($pos: 50%)
   top: $pos
   +transform(translateY(-50%)
-=center($pos: 50%)
-  left: $pos
-  +transform(translateX(-50%)
-  top: $pos
-  +transform(translateY(-50%)
+=center($posX: 50%, $posY: 50%))
+  left: $posX
+  top: $posY
+  +transform(translateX(-50%) translateY(-50%))
