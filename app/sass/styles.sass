@@ -1,8 +1,10 @@
-@charset 'utf-8'
-@import common
+@charset "utf-8"
+@import compass
 @import compass/reset
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic')
-@import main
+@import ../libs/sass-mq/_mq
+@import mixins
+@import variables
+@import compass/layout/sticky-footer
 
 //------------------------------------------------------------LIBS
 // @import ../libs/slick-carousel/slick/slick
@@ -12,8 +14,9 @@
 //------------------------------------------------------------
 
 @import sprite
-// @import libs
 
 //---------------------------------------------------------
 
+@import main
+@import index
 @import slider/styles
