@@ -103,6 +103,15 @@ input[type=text], input[type=tel], input[type=email]
 
 //--------------------------------------SPRITE
 
+.svg-sprite
+  height: 0
+  width: 0
+  display: none
+  +hide-text()
+  speak: none
+  +opacity(0)
+
+@import sprite-symbol
 
 %sprite
   +inline-block()

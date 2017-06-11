@@ -20,7 +20,10 @@ mixin section(name)
 			else
 				return
 
-mixin svg(name)
+mixin svg(name, type)
 	svg(class='svg-' + name + '-dims')
-		use(xlink:href='#' + name, class='use-' + name)
+		if type
+			use(xlink:href='#' + name, class= type)
+		else
+			use(xlink:href='#' + name)
 
