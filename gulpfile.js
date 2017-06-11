@@ -16,6 +16,7 @@ var gulp        = require('gulp'),
     uglifyJs    = require('gulp-uglifyjs'),
     svgSprite   = require('gulp-svg-sprite'),
     path        = require('path'),
+    pugData     = require('./app/pug/data.json'),
     compass     = require('gulp-compass');
 
 //---------------------------------------SYNC
@@ -34,6 +35,7 @@ gulp.task('sync', function () {
 gulp.task('pug', function () {
 	return gulp.src('app/*.pug')
 		.pipe(pug({
+			locals: pugData,
 			pretty: true
 		}))
 		.on('error', notify.onError({
