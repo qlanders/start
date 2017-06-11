@@ -24,3 +24,5 @@ app/**/*.html
 node_modules/
 .idea
 /dist/
+app/sass/_sprite-css.scss
+app/sass/_sprite-symbol.scss

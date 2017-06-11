@@ -1,0 +1,17 @@
+//----------COMPASS INIT
+
+//$critical-usage-threshold: 0
+$graceful-usage-threshold: 1
+//$debug-browser-support: true
+$browser-minimum-versions: ('ie': '10', 'chrome': '20', 'firefox': '3')
+//$supported-browsers: reject(browsers(), 'ie')
+$rem-with-px-fallback: false
+$inline-block-support-threshold: 100
+
+@import compass
+
+//--------------------------------
+
+@import ../libs/sass-mq/_mq
+@import mixins
+@import variables
