@@ -145,3 +145,42 @@
   margin-left: - ($width / 2)
   margin-top: - ($height / 2)
   
+
+
+//---------------------SVG-SPRITE
+
+@import sprite-css
+
+$sprite: map-get($icons, sprite) !default
+$baseFontSize: 16px !default
+
+@function sprite-attr($icon, $attr)
+  $newIcon: map-get($icons, $icon)
+  @if $newIcon == null
+    @warn "Can't find an icon with the name #{$icon}"
+  @return map-get($newIcon, $attr)
+
+@function icon-attr($icon)
+  $attr: (width: sprite-attr($icon, width), height: sprite-attr($icon, height), x: sprite-attr($icon, backgroundX), y: sprite-attr($icon, backgroundY))
+  @return $attr
+
+%sprite
+  +inline-block()
+  background-image: url(map-get($sprite, svgPath))
+  background-size: mq-px2em(map-get($sprite, width)) mq-px2em(map-get($sprite, height))
+
+@mixin sprite($icon, $type: all)
+  @if $type == all
+    // Shares the backgrounds
+    @extend %sprite
+
+  $iconMap: icon-attr($icon)
+
+  // Outputs dimensions in em
+  @if $type == all or $type == size
+    width: mq-px2em(map-get($iconMap, width) + 1)
+    height: mq-px2em(map-get($iconMap, height) + 1)
+
+  // Outputs background position in em
+  @if $type == all or $type == bg 
+    background-position: mq-px2em(map-get($iconMap, x)) mq-px2em(map-get($iconMap, y))

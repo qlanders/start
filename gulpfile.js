@@ -68,7 +68,7 @@ gulp.task('compass', function () {
 //---------------------------------------IMAGES
 
 gulp.task('img', function () {
-	return gulp.src(['app/images/**/*', '!app/images/svg/*', '!app/images/sprite.svg'])
+	return gulp.src(['app/images/**/*', '!app/images/svg/*'])
 		.pipe(cache(imgMin({
 			intarlaced : true,
 			progressive: true,
@@ -79,28 +79,57 @@ gulp.task('img', function () {
 });
 
 gulp.task('svgCss', function () {
-	return gulp.src('app/images/svg/**/*.svg')
+
+	return gulp.src('app/images/css/*.svg')
+		.pipe(cache(imgMin({
+				intarlaced : true,
+				progressive: true,
+				svgoPlugins: [{removeViewBox: false}]
+		})))
 		.pipe(svgSprite({
 			mode: {
 				css: {
-					dest  : '',
+					dest  : './',
 					sprite: '../images/sprite-css',
+					bust  : false,
+					layout: 'diagonal',
 					render: {
 						scss: {
-							dest: '../sass/_sprite-css.scss'
+							dest: '../sass/_sprite-css.scss',
+							template: "app/templates/sprite-css.scss"
 						}
-					},
-					bust  : false
+					}
 				}
+			},
+			variables: {
+				mapname: "ic-css"
 			}
 		}))
-		.on('error', notify.onError(
-			{
-				message: "<%= error.message %>",
-				title  : "SVG error!"
-			}
-		))
 		.pipe(gulp.dest('app/images/'));
+
+});
+
+gulp.task('svgSymbol', function () {
+
+	return gulp.src('app/images/symbol/*.svg')
+		.pipe(svgSprite({
+			mode: {
+				symbol: {
+					dest  : '',
+					sprite: 'sprite-symbol.svg',
+					render: {
+						scss: {
+							dest: '../sass/_sprite-symbol.scss'
+						}
+					}
+				}
+			},
+			variables: {
+				mapname: "ic-symbol"
+			}
+		}))
+		.pipe(gulp.dest('app/images/'));
+
 });
 
 //---------------------------------------CLEAN

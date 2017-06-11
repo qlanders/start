@@ -16,12 +16,11 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.lnk
-app/images/sprite-css.svg
 app/css/
+app/images
 app/libs/
 app/test.pug
 app/**/*.html
 node_modules/
 .idea
 /dist/
-package.json
