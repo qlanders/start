@@ -67,14 +67,7 @@
   @if $direction == bl
     border-width: $height 0 0 $width
     border-color: transparent transparent transparent $bg
-
-=calc($property, $expression, $default: false)
-  @if $default
-    #{$property}: $default
-  #{$property}: -moz-calc(#{$expression})
-  #{$property}: -webkit-calc(#{$expression})
-  #{$property}: calc(#{$expression})
-
+    
 =hide-styling() 
   -webkit-appearance: none
   -moz-appearance: none
@@ -139,3 +132,16 @@
   left: $posX
   top: $posY
   +transform(translateX(-50%) translateY(-50%))
+  
+=centerX-margin($width: 20px)
+  left: 50%
+  margin-left: - ($width / 2)
+=centerY-margin($height: 20px)
+  top: 50%
+  margin-top: - ($height / 2)
+=center-margin($width: 20px, $height: 20px)
+  top: 50%
+  left: 50%
+  margin-left: - ($width / 2)
+  margin-top: - ($height / 2)
+  

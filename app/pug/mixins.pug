@@ -10,8 +10,6 @@ mixin list(name, count, src)
 					img(class=name + '__img', src=src + i + '.jpg')
 					if block
 						block
-					else
-						return
 					- i++
 
 mixin section(name)

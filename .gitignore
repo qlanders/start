@@ -24,3 +24,4 @@ app/**/*.html
 node_modules/
 .idea
 /dist/
+package.json

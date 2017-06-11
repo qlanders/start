@@ -1,5 +1,52 @@
 //FOOTER
+
 footer#footer.footer
-	.g--wrapper
-		p Footer content
+  .g--wrapper
+    ul.footer__list
+      li.footer__item.footer__item_menu
+        ul.fmenu__list
+          li.fmenu__item
+            span.fmenu__title Информация
+            ul.fmenu__sub-list
+              li.fmenu__sub-item
+                a.fmenu__link(href='#') О интернет-магазине
+              li.fmenu__sub-item
+                a.fmenu__link(href='#') Доставка
+              li.fmenu__sub-item
+                a.fmenu__link(href='#') Партнерские отношения
+          li.fmenu__item
+            span.fmenu__title Служба поддержки
+            ul.fmenu__sub-list
+              li.fmenu__sub-item
+                a.fmenu__link(href='#') Связатся с нами
+              li.fmenu__sub-item
+                a.fmenu__link(href='#') Карта сайта
+          //li.fmenu__item
+            span.fmenu__title Дополнительно
+            ul.fmenu__sub-list
+              li.fmenu__sub-item
+                a.fmenu__link(href='#') Подарочные сертификаты
+              li.fmenu__sub-item
+                a.fmenu__link(href='#') Акции
+      li.footer__item.footer__item_social
+        span.social__title мы в соцсетях
+        ul.social__list
+          - var i = 1
+          while i <= 6
+            li.social__item
+              a.social__link(href='#')
+              -i++
+      li.footer__item.footer__item_contacts
+        ul.footer-contacts__list
+          li.footer-contacts__item
+            a.footer__mail(href='mailto:info@mail.ru') info@mail.ru
+          li.footer-contacts__item
+            a.footer__phone(href='tel:+74957392489') +7 (495) 739-24-89
+    .footer__bottom
+      .footer__copyright
+        span © 2017 Текстильная мануфактура Васильевъ и Партнеры. Все права защищены.
+      .footer__creator
+        a(href='https://www.divier.ru/', target='_blank') Создание сайта
+        |  ДиВиЕР
+
 //FOOTER END

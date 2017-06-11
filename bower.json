@@ -19,7 +19,7 @@
   "dependencies": {
     "sass-mq": "^3.3.2",
     "slick-carousel": "^1.6.0",
-    "CSS-Hamburgers": "hamburgers#^1.0.2",
-    "magnific-popup": "^1.1.0"
+    "magnific-popup": "^1.1.0",
+    "css-hamburgers": "^0.8.1"
   }
 }

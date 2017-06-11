@@ -1,4 +1,27 @@
 //HEADER
+
 header.header
-	.g--wrapper.g--wrapper_padding
+	.g--wrapper.header__wrapper
+		.header__item.header__item_contacts
+			a(href='tel:+74957392489').header__phone +7 (495) 739-24-89
+			a(href='mailto:info@vasilevtex.ru').header__email info@vasilevtex.ru
+			a.header__callback.js_callback(href='#') Заказать звонок
+		a(href='/').header__item.header__item_logo
+			img.header__logo(src='images/logo.svg', alt='Текстильная мануфактура Васильев и Партнеры')
+			span.header__title Производство и
+				br
+				| продажа портьерных
+				br
+				| тканей и штор
+		.header__item.header__item_user-panel
+			.user-panel__links
+				a(href='#').user-panel__enter Вход
+				a(href='#').user-panel__registration Регистрация
+			a(href='#').user-panel__basket.basket
+				.basket__inner
+					span.basket__item Товаров:
+						em  1 шт.
+					span.basket__item На сумму:
+						em  1 110 руб.
+
 //HEADER END
