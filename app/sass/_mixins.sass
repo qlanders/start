@@ -164,11 +164,6 @@ $baseFontSize: 16px !default
   $attr: (width: sprite-attr($icon, width), height: sprite-attr($icon, height), x: sprite-attr($icon, backgroundX), y: sprite-attr($icon, backgroundY))
   @return $attr
 
-%sprite
-  +inline-block()
-  background-image: url(map-get($sprite, svgPath))
-  background-size: mq-px2em(map-get($sprite, width)) mq-px2em(map-get($sprite, height))
-
 @mixin sprite($icon, $type: all)
   @if $type == all
     // Shares the backgrounds
@@ -184,3 +179,15 @@ $baseFontSize: 16px !default
   // Outputs background position in em
   @if $type == all or $type == bg 
     background-position: mq-px2em(map-get($iconMap, x)) mq-px2em(map-get($iconMap, y))
+
+/* USAGE
+
+.class-vk
+    position: relative
+    &:before
+        +pseudo
+        top: 0
+        left: 0
+        +sprite(vk)
+
+*/

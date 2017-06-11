@@ -99,3 +99,22 @@ input[type=text], input[type=tel], input[type=email]
   &_sm
     min-width: 150px
     line-height: 34px
+
+
+//--------------------------------------SPRITE
+
+
+%sprite
+  +inline-block()
+  background-image: url(map-get($sprite, svgPath))
+  background-size: mq-px2em(map-get($sprite, width)) mq-px2em(map-get($sprite, height))
+      
+
+
+//-----------------------LIBS
+
+
+//@import ../libs/css-hamburgers/_sass/hamburgers/hamburgers
+//@import ../libs/magnific-popup/src/css/main
+//@import ../libs/slick-carousel/slick/slick
+//@import libs
