@@ -7,7 +7,9 @@ section.navigation
 					span.hamburger-inner
 				span.hamburger-label Меню
 			ul.navigation__list#js--mobile-menu-list
-					li.navigation__item_1
+				each i in menuItems
+					li.navigation__item
+						a.navigation__link= i
 
 
 //NAVIGATION END

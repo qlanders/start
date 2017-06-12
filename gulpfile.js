@@ -153,6 +153,7 @@ gulp.task('cleanCss', function () {
 gulp.task('watch', ['sync', 'compass', 'pug', 'svgCss'], function () {
 	gulp.watch('app/sass/**/*.sass', ['compass']);
 	gulp.watch('app/**/*.pug', ['pug']);
+	gulp.watch('app/pug/*.json', ['pug']);
 	gulp.watch('app/index.html', reload);
 	gulp.watch('app/**/*.js', reload);
 });
